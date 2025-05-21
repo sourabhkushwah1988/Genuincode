@@ -1,0 +1,67 @@
+<!-- templates/payment_checkout.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      margin: 10px 0 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment for <strong>{{ title }}</strong></h2>
+    <p>Amount: ₹{{ amount|floatformat:2|stringformat:"d"|slice:":-2" }}.00</p>
+    <p>Razorpay popup will open automatically. If not, <button onclick="rzp.open()">click here</button>.</p>
+  </div>
+
+  <!-- Razorpay Script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+        "key": "{{ api_key }}",
+        "amount": "{{ amount }}",
+        "currency": "INR",
+        "name": "SkillX Courses",  // You can change this
+        "description": "Course Purchase: {{ title }}",
+        "order_id": "{{ order_id }}",
+        "handler": function (response){
+            alert("Payment successful!");
+            window.location.href = "{% url 'payment_success' %}";
+        },
+        "prefill": {
+            "name": "Student",
+            "email": "[email protected]",
+            "contact": "9876543210"
+        },
+        "theme": {
+            "color": "#007bff"
+        }
+    };
+
+    var rzp = new Razorpay(options);
+    window.onload = function() {
+      rzp.open();
+    };
+  </script>
+</body>
+</html>
