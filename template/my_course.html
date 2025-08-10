@@ -1,0 +1,169 @@
+{%extends 'base.html'%} {%block content%} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <style>
+        /* Internal CSS */
+        #home {
+            background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(19, 17, 118, 0.7)),
+            url("/static/image/background.jpg");
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        #home h2 {
+            color: white;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        #home p {
+            width: 50%;
+            color: white;
+            font-size: 0.9rem;
+            line-height: 25px;
+        }
+
+        #home .btn {
+            margin-top: 40px;
+        }
+
+        #home a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 13px 35px;
+            background-color: #fff;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        #home a.blue {
+            margin: 18px;
+            background-color: rgb(21, 21, 100);
+            color: #fff;
+        }
+
+        #home a.blue:hover {
+            background-color: #fff;
+            color: rgb(21, 21, 100);
+            transition: 0.5s ease;
+        }
+
+        #home a.yellow {
+            margin: 18px;
+            background-color: #fdc93b;
+            color: #fff;
+        }
+
+        #home a.yellow:hover {
+            background-color: whitesmoke;
+            color: rgb(21, 21, 100);
+            transition: 0.3s ease;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .profile-section h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .profile-section p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .profile-section a.update-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #fdc93b;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .profile-section a.update-button:hover {
+            background-color: #fff;
+            color: rgb(21, 21, 100);
+            transition: 0.3s ease;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .courses-section h3 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .courses-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .courses-section ul li {
+            font-size: 1.2rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Section with Background -->
+    <div id="home">
+        <h2>Welcome to Your Profile</h2>
+        <p>Manage your profile details and update your information here.</p>
+
+        <!-- Buttons for actions -->
+        <div class="btn">
+            <a href="{% url 'logout' %}" class="yellow">Logout</a>
+        </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <h2>User Profile</h2>
+        
+        <!-- Displaying the logged-in user's username -->
+        <p>Welcome, {{ user.username }}!</p>
+
+        <p>Your email: {{ user.email }}</p>
+
+        <!-- Option to update user information -->
+        <a href="{% url 'update_profile' %}" class="update-button">Update Profile</a>
+    </div>
+
+    <!-- Other Content Section (for courses or other details) -->
+    <div class="courses-section">
+        <h3>Your Courses</h3>
+        <ul>
+            <li>Course 1: Python Programming</li>
+            <li>Course 2: Web Development</li>
+            <li>Course 3: Machine Learning</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+{%endblock%}

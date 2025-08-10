@@ -1,0 +1,1265 @@
+{%extends 'base.html'%} {%block content%} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>genuine coding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="static\css\style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      h1 {
+        font-size: 25px;
+        font-weight: 700;
+        color: rgb(35, 35, 85);
+      }
+
+      span {
+        font-size: 9px;
+        color: #757373;
+      }
+
+      h6 {
+        font-size: 11px;
+        color: rgb(24, 24, 49);
+      }
+
+      /* navigation */
+
+      nav {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vw 8vw;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+      }
+
+      nav img {
+        width: 70px;
+        cursor: pointer;
+        border-radius: 100%;
+      }
+
+      nav .navigation {
+        display: flex;
+      }
+
+      #menu-btn {
+        width: 30px;
+        height: 30px;
+        display: none;
+      }
+
+      #menu-btn {
+        display: none;
+      }
+
+      nav .navigation ul {
+        display: flex;
+        justify-self: flex-end;
+        align-items: center;
+      }
+
+      nav .navigation ul li {
+        list-style: none;
+        margin-left: 30px;
+      }
+
+      nav .navigation ul li a {
+        text-decoration: none;
+        color: rgb(21, 21, 100);
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.5s;
+      }
+
+      nav .navigation ul li a.active,
+      nav .navigation ul li a:hover {
+        color: rgb(255, 221, 28);
+      }
+
+      /* Home */
+
+      #home {
+        background-image: linear-gradient(
+            rgba(9, 5, 54, 0.3),
+            rgba(19, 17, 118, 0.7)
+          ),
+          url("/static/image/background.jpg");
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 40px;
+      }
+
+      #home h2 {
+        color: white;
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+
+      #home p {
+        width: 50%;
+        color: white;
+        font-size: 0.9rem;
+        line-height: 25px;
+      }
+
+      #home .btn {
+        margin-top: 40px;
+      }
+
+      #home a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 13px 35px;
+        background-color: #fff;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+
+      #home a.blue {
+        margin: 18px;
+        background-color: rgb(21, 21, 100);
+        color: #fff;
+      }
+
+      #home a.blue:hover {
+        background-color: #fff;
+        color: rgb(21, 21, 100);
+        transition: 0.5s ease;
+      }
+
+      #home a.yellow {
+        margin: 18px;
+        background-color: #fdc93b;
+        color: #fff;
+      }
+
+      #home a.yellow:hover {
+        background-color: whitesmoke;
+        color: rgb(21, 21, 100);
+        transition: 0.3s ease;
+      }
+
+      /* features */
+
+      #features {
+        padding: 5vw 8vw 0 8vw;
+        text-align: center;
+      }
+
+      #features .fea-base {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 1rem;
+        margin-top: 30px;
+      }
+
+      #features .fea-box {
+        background: #e9e9f3;
+        text-align: start;
+      }
+
+      #features .fea-box i {
+        font-size: 2.3rem;
+        color: rgb(44, 44, 80);
+      }
+
+      #features .fea-box h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: rgb(46, 46, 59);
+        padding: 13px 0 7px 0;
+      }
+
+      #features .fea-box p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgb(70, 70, 87);
+      }
+
+      /* course */
+
+      #course {
+        padding: 8vw 8vw 8vw 8vw;
+        text-align: center;
+      }
+
+      #course .course-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 1rem;
+        margin-top: 50px;
+      }
+
+      #course .courses {
+        text-align: start;
+        background: #f9f9ff;
+        height: 100%;
+        position: relative;
+      }
+
+      #course .courses img {
+        width: 100%;
+        height: 60%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      #course .courses .detail {
+        padding: 15px 15px 0 15px;
+      }
+
+      #course .courses .detail i {
+        color: #fdc93b;
+        font-size: 0.9rem;
+      }
+
+      #course .courses .cost {
+        background-color: rgb(69, 69, 167);
+        color: #fff;
+        line-height: 70px;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        right: 15px;
+        bottom: 100px;
+      }
+
+      /* Ragistration */
+
+      #ragistration {
+        padding: 6vw 8vw 6vw 8vw;
+        background-image: linear-gradient(
+            rgba(99, 112, 168, 0.5),
+            rgba(81, 91, 233, 0.5)
+          ),
+          url(image/hacking.jpg);
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #ragistration .reminder {
+        color: #fff;
+      }
+
+      #ragistration .reminder h1 {
+        color: #fff;
+      }
+
+      #ragistration .reminder .time {
+        display: flex;
+        margin-top: 40px;
+      }
+
+      #ragistration .reminder .time .date {
+        text-align: center;
+        padding: 13px 33px;
+        background-color: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border-radius: 10px;
+        margin: 0 5px 10px 5px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      #ragistration .form {
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        box-shadow: 0 8px 30px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      #ragistration .form input {
+        margin: 15px;
+        padding: 15px 10px;
+        border: 1px solid rgb(84, 40, 241);
+        outline: none;
+      }
+
+      #ragistration .form input::placeholder {
+        color: #413c3c;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      #ragistration .form .btn {
+        margin-top: 15px;
+      }
+
+      #ragistration .form a.yellow {
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 13px 35px;
+        background-color: #fff;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 18px;
+        background-color: #fdc93b;
+        color: #fff;
+      }
+
+      #ragistration .form a.yellow:hover {
+        background-color: whitesmoke;
+        color: rgb(21, 21, 100);
+        transition: 0.3s ease;
+      }
+
+      /* profile */
+
+      #experts {
+        padding: 8vw 8vw 8vw 8vw;
+        text-align: center;
+      }
+
+      #experts img {
+        height: 180px;
+        width: 220px;
+        border-radius: 75%;
+      }
+
+      #experts .expert-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 1rem;
+        margin-top: 50px;
+      }
+
+      #experts .expert-box .profile {
+        background: #fafaf1;
+        padding: 30px 20px;
+      }
+
+      .pro-links {
+        margin-top: 10px;
+      }
+
+      .pro-links i {
+        padding: 10px 13px;
+        border: 1px solid rgb(21, 21, 100);
+        cursor: pointer;
+        transform: 0.3s ease;
+      }
+
+      .pro-links i:hover {
+        background: rgb(21, 21, 100);
+        color: #fff;
+        border: 1px solid rgb(21, 21, 100);
+        cursor: pointer;
+      }
+
+      /* FOOTER */
+
+      footer {
+        padding: 5vw;
+        background: #101c32;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      footer .footer-col {
+        padding: 20px;
+      }
+
+      footer h3 {
+        color: rgb(241, 240, 245);
+        font-weight: 500;
+        padding-bottom: 10px;
+      }
+
+      footer li {
+        list-style: none;
+        color: #7b838c;
+        padding: 10px 0;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      footer li:hover {
+        color: rgb(241, 240, 245);
+      }
+
+      footer p {
+        color: #7b838a;
+      }
+
+      footer .subscribe {
+        margin-top: 20px;
+      }
+
+      footer input {
+        width: 230px;
+        padding: 15px 12px;
+        background: #334f6c;
+        border: none;
+        outline: none;
+        color: #fff;
+      }
+
+      footer .subscribe a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 12px 15px;
+        background-color: #fff;
+        font-weight: 600;
+      }
+
+      footer .subscribe a.yellow {
+        margin: 18px;
+        background-color: #fdc93b;
+        color: #fff;
+      }
+
+      footer .subscribe a.yellow:hover {
+        background-color: whitesmoke;
+        color: rgb(21, 21, 100);
+        transition: 0.3s ease;
+      }
+
+      footer .copyright {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      footer .copyright p {
+        color: #fff;
+      }
+
+      footer .copyright .pro-links {
+        margin-top: 0px;
+      }
+
+      footer .copyright .pro-links i {
+        background: #5f7185;
+        color: #fff;
+      }
+
+      footer .copyright .pro-links i:hover {
+        background: #fdc93b;
+        color: #2c2c2c;
+      }
+
+      /* ABOUT HOME */
+      #about-home {
+        background-image: linear-gradient(
+            rgba(9, 5, 54, 0.3),
+            rgba(5, 4, 46, 0.7)
+          ),
+          url("image/background.jpg");
+        width: 100%;
+        height: 60vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 40px;
+      }
+
+      #about-home h2 {
+        color: #fff;
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+
+      #about-container {
+        display: flex;
+        align-items: center;
+        padding: 8vw 8vw 2vw 8vw;
+      }
+
+      #about-container .about-img img {
+        width: 90%;
+      }
+
+      #about-container .about-img {
+        width: 100%;
+        padding: 60px;
+      }
+
+      #about-container .about-text {
+        width: 40%;
+      }
+
+      #about-container .about-text h2 {
+        color: #29303b;
+        padding-bottom: 15px;
+      }
+
+      #about-container .about-text p {
+        color: #686f7a;
+        font-size: 300;
+      }
+
+      #about-container .about-text .about-fe {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+      }
+
+      #about-container .about-text .about-fe img {
+        width: 50px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      #about-container .about-text .about-fe .fe-text {
+        width: 90%;
+      }
+
+      #about-container .about-text .about-fe .fe-text h5 {
+        font-size: 15px;
+        color: #29303b;
+      }
+
+      #trust {
+        text-align: center;
+        padding: 8vw;
+      }
+
+      #trust .tust-img {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #trust .tust-img img {
+        width: 90px;
+        height: auto;
+      }
+
+      /* BLOG */
+      #blog-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 8vw;
+      }
+
+      #blog-container .blogs {
+        width: 60%;
+      }
+
+      #blog-container .blogs img {
+        width: 100%;
+        border-radius: 20px;
+        padding-top: 19px;
+      }
+
+      #blog-container .blogs .post h3 {
+        color: #29303b;
+        padding: 15px 0px 10px 0px;
+      }
+
+      #blog-container .blogs .post p {
+        color: #757373;
+        padding-bottom: 20px;
+      }
+
+      #blog-container .blogs .post a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 13px 35px;
+        background-color: rgb(21, 21, 100);
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+
+      #blog-container .cate {
+        width: 30%;
+      }
+
+      #blog-container .cate h2 {
+        padding-bottom: 7px;
+      }
+
+      #blog-container .cate a {
+        text-decoration: none;
+        color: #757373;
+        font-weight: 500;
+        line-height: 40px;
+      }
+
+      #blog-container .blogpost {
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      #blog-container .blogpost .post img {
+        height: 264px;
+        width: 513px;
+        border-radius: 5%;
+        padding-bottom: 8px;
+      }
+
+      #blog-container .blogpost p {
+        text-align: justify;
+        padding-bottom: 60px !important;
+      }
+
+      #blog-container .blogpost .post a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 13px 35px;
+        background-color: rgb(21, 21, 100);
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+
+      /* course-iner */
+
+      #course-iner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 8vh;
+      }
+
+      #course-iner h3 {
+        padding: 35px 0px 25px 0px;
+        color: #29303b;
+      }
+
+      #course-iner P {
+        color: #64626e;
+      }
+
+      #course-iner hr {
+        height: 1px;
+        background: rgba(236, 226, 229, 0.5);
+        margin-top: 40px;
+      }
+
+      #course-iner .overview {
+        width: 70%;
+      }
+
+      #course-iner .overview .course-img {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      #course-iner .overview .course-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      #course-iner .overview .course-head .c-name {
+        width: 70%;
+      }
+
+      #course-iner .overview .course-head .c-name h2 {
+        color: #29303b;
+      }
+
+      #course-iner .overview .course-head .c-name .star {
+        margin: 6px 0;
+      }
+
+      #course-iner .overview .course-head .c-name .star i {
+        color: #fdc93b;
+        font-size: 0.9rem;
+      }
+
+      #course-iner .overview .course-head .c-name p {
+        font-size: 15px;
+      }
+
+      #course-iner .overview .course-head span {
+        padding: 19px 13px;
+        color: #5838fc;
+        font-size: 24px;
+        font-weight: 7000;
+        background-color: rgba(88, 56, 252, 0.1);
+      }
+
+      #course-iner .learn p {
+        font-size: 15px;
+        padding-bottom: 15px;
+      }
+
+      #course-iner .learn p i {
+        color: #654ce4;
+        font-weight: 700;
+        margin-right: 20px;
+      }
+
+      #course-iner .tutor {
+        display: flex;
+      }
+
+      #course-iner .tutor img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      #course-iner .tutor h5 {
+        font-size: 15px;
+      }
+
+      #course-iner .enroll {
+        width: 300px;
+        padding: 0px 30px 30px 30px;
+        border-radius: 11px;
+        box-shadow: 0px 20px 40px 0 rgb(11 2 55 / 8%);
+      }
+
+      #course-iner .enroll h3 {
+        padding-bottom: 10px;
+      }
+
+      #course-iner .enroll p {
+        font-size: 15px;
+        color: #64626e;
+        margin: 15px 0;
+      }
+
+      #course-iner .enroll p i {
+        color: #654ce4;
+        font-weight: 500;
+        margin-right: 18px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+      }
+
+      #course-iner .enroll .enroll-btn {
+        padding: 25px 0px 20px 0px;
+        margin: auto;
+        text-align: center;
+      }
+
+      #course-iner .enroll .enroll-btn a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        padding: 13px 45px;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #fff;
+        background: rgb(50, 50, 136);
+      }
+
+      /* contact uss */
+
+      #contact {
+        padding: 8vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      #contact .getin {
+        width: 350px;
+      }
+
+      #contact .getin h2 {
+        color: #2c234d;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 0.8;
+        margin-bottom: 16px;
+      }
+
+      #contact .getin p {
+        color: #686875;
+        line-height: 24px;
+        margin-bottom: 33px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #e5e4ed;
+      }
+
+      #contact .getin h3 {
+        color: #2c234d;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+        margin-bottom: 15px;
+      }
+
+      #contact .getin .getin-details div {
+        display: flex;
+      }
+
+      #contact .getin .getin-details div .get {
+        font-size: 16px;
+        line-height: 22px;
+        color: #5838fc;
+        margin-right: 20px;
+      }
+
+      #contact .getin .getin-details div p {
+        font-size: 14px;
+        border-bottom: none;
+        line-height: 22px;
+        margin-bottom: 15px;
+      }
+
+      #contact .form {
+        width: 60%;
+        background: #f7f6fa;
+        padding: 40px;
+        border-radius: 10px;
+      }
+
+      #contact .form h4 {
+        font-size: 24px;
+        color: #2c234d;
+        line-height: 30px;
+        margin-bottom: 8px;
+      }
+
+      #contact .form p {
+        color: #686875;
+        line-height: 24px;
+        padding-bottom: 25px;
+      }
+
+      #contact .form .form-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      #contact .form .form-row input {
+        width: 48%;
+        font-size: 14px;
+        font-weight: 400;
+        border-radius: 3px;
+        border: none;
+        background: #ffffff;
+        color: #7e7c87;
+        outline: none;
+        padding: 20px 30px;
+        margin-bottom: 20px;
+      }
+
+      #contact .form .form-col textarea,
+      #contact .form .form-col input {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+        border-radius: 3px;
+        border: none;
+        background: #ffffff;
+        color: #7e7c87;
+        outline: none;
+        padding: 20px 30px;
+        margin-bottom: 20px;
+      }
+
+      #contact .form button {
+        font-size: 0.9rem;
+        padding: 13px 25px;
+        background: rgb(21, 21, 100);
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        color: #fff;
+      }
+
+      #map {
+        width: 100%;
+        height: 70vh;
+        margin-bottom: 8vw;
+      }
+
+      #map iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media (max-width: 769px) {
+        nav {
+          padding: 15px 20px;
+          z-index: 130px;
+        }
+
+        nav img {
+          width: 130px;
+        }
+
+        #menu-btn {
+          display: initial;
+        }
+
+        #menu-close {
+          display: initial;
+          font-size: 1.6rem;
+          color: #fff;
+          padding: 30px 0 20px 20px;
+        }
+
+        nav .navigation ul {
+          position: absolute;
+          top: 0;
+          right: -220px;
+          width: 220px;
+          height: 100vh;
+          background-color: rgba(17, 20, 104, 0.45);
+          backdrop-filter: blur(4.5px);
+          border: 1px solid rgba(225, 225, 225, 0.18);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          transition: 0.3s ease;
+        }
+
+        nav .navigation ul.active {
+          right: 0;
+        }
+
+        nav .navigation ul li {
+          padding: 20px 0 20px 40px;
+          margin-left: 0;
+        }
+
+        nav .navigation ul li a {
+          color: #fff;
+        }
+
+        #home {
+          padding-top: 0px;
+        }
+
+        #home p {
+          width: 90%;
+        }
+
+        #features {
+          padding: 8vw, 4vw, 0vw, 4vw;
+        }
+
+        #course {
+          padding: 8vw, 4vw, 0vw, 4vw;
+        }
+
+        #ragistration {
+          margin: 8vw;
+          padding: 8vw, 4vw, 6vw, 4vw;
+        }
+
+        #ragistration .reminnder .time {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 40px;
+        }
+
+        #experts {
+          padding: 8vw, 4vw, 4vw, 4vw;
+        }
+
+        footer .copyright .pro-links {
+          margin-top: 15px;
+        }
+      }
+
+      /* ABOUT */
+      #about-container {
+        padding: 8vw 4vw 2vw 4vw;
+      }
+
+      #about-container .about-img {
+        padding-right: 30px;
+      }
+
+      @media (max-width: 475px) {
+        #ragistration {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+
+        #ragistration .reminder .time {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <!--  <nav>
+      <img src="image/logo.png" alt="" />
+      <div class="navigation">
+        <ul>
+          <i class="fas fa-times"></i>
+          <li><a href="home">Home</a></li>
+          <li><a href="About">About</a></li>
+          <li><a href="Blog">Blog</a></li>
+          <li><a href="Course">Course</a></li>
+          <li><a href="Contact">Contact</a></li>
+          <li><a href="user login">User login</a></li>
+        </ul>
+        <img id="menu-btn" src="image/menu1.png" alt="" />
+      </div>
+    </nav> -->
+
+    <!-- Home -->
+
+    <section id="about-home">
+      <h2>Courses / Genuine Code</h2>
+    </section>
+
+    <!-- courses -->
+
+    <section id="course">
+      <h1>Our Popular Courses</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
+        dolorem.
+      </p>
+      <div class="course-box">
+        <div onclick="window.location.href='course-iner.html'" class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 26/09/2023</span>
+            <h5>Machine learning For beginners course</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(457k)</span>
+            </div>
+          </div>
+          <div class="cost">$49.99</div>
+        </div>
+
+        <div class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 26/09/2023</span>
+            <h5>SQL For beginners course</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(100k)</span>
+            </div>
+          </div>
+          <div class="cost">$59.99</div>
+        </div>
+
+        <div class="courses">
+         <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 18/09/2023</span>
+            <h5>robotices For beginners course</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(256k)</span>
+            </div>
+          </div>
+          <div class="cost">$78.00</div>
+        </div>
+
+        <div class="courses">
+         <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 26/09/2023</span>
+            <h6>Machine learning For beginners course</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(457k)</span>
+            </div>
+          </div>
+          <div class="cost">$9.00</div>
+        </div>
+
+        <div class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 26/09/2023</span>
+            <h6>HTML For beginners course</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(1.5M)</span>
+            </div>
+          </div>
+          <div class="cost">FREE</div>
+        </div>
+
+        <div class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 18/09/2023</span>
+            <h6>HACKING For beginners course</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(423k)</span>
+            </div>
+          </div>
+          <div class="cost">$78.00</div>
+        </div>
+
+        <div class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 18/09/2023</span>
+            <h6>robotices For beginners course</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(256k)</span>
+            </div>
+          </div>
+          <div class="cost">$78.00</div>
+        </div>
+
+        <div class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 26/09/2023</span>
+            <h6>Machine learning For beginners course</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(457k)</span>
+            </div>
+          </div>
+          <div class="cost">$9.00</div>
+        </div>
+
+        <div class="courses">
+          <img src="{% static 'image/html.jpg' %}" alt="" />
+          <div class="detail">
+            <span>Updated 26/09/2023</span>
+            <h6>HTML For beginners course</h6>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(1.5M)</span>
+            </div>
+          </div>
+          <div class="cost">FREE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#menu-btn").click(function () {
+          $("nav .navigation ul").addClass("active");
+        });
+
+        $("#menu-close").click(function () {
+          $("nav .navigation ul").removeClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
+{%endblock%}
