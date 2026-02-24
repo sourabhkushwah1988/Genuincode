@@ -1,1 +1,2 @@
-web: gunicorn admin.wsgi:application
+# Django app for Render deployment
+web: gunicorn admin.wsgi:application --chdir admin
