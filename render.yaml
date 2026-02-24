@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: genuincode
+    env: python
+    pythonVersion: "3.11.6"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn admin.wsgi:application --chdir admin"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: admin.settings
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
