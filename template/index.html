@@ -1,351 +1,208 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Home | Genuincode - Professional Software Solutions{% endblock %}
+{% block title %}Genuincode - Professional IT Training Institute{% endblock %}
 
 {% block content %}
 
 <!-- Hero Section -->
 <section id="home" class="py-5 mt-5">
   <div class="container">
-    <div class="row align-items-center min-vh-75">
-      <div class="col-lg-6 col-md-12" data-aos="fade-right">
-        <h1 class="display-4 fw-bold">Enhance Your Future With Genuine Code</h1>
-        <p class="lead my-4">Learn professional web development and software skills from industry experts. Join thousands of students transforming their careers.</p>
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-up">
+        <h1 class="mb-4">Master Your Future with <span class="text-primary-custom">Professional IT Training</span></h1>
+        <p class="mb-4">Join thousands of students who have transformed their careers with our expert-led courses in web development, Python, machine learning, and more.</p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="{% url 'learnmore_home' %}" class="btn btn-primary px-4 py-2">Learn More</a>
-          <a href="{% url 'course' %}" class="btn btn-warning px-4 py-2">View Courses</a>
+          <a href="{% url 'course' %}" class="btn btn-primary">Explore Courses</a>
+          <a href="{% url 'contact' %}" class="btn btn-outline-secondary">Get Started</a>
+        </div>
+        
+        <div class="d-flex gap-4 mt-5">
+          <div>
+            <h3 class="fw-bold">5K+</h3>
+            <p class="mb-0">Students</p>
+          </div>
+          <div>
+            <h3 class="fw-bold">50+</h3>
+            <p class="mb-0">Courses</p>
+          </div>
+          <div>
+            <h3 class="fw-bold">100+</h3>
+            <p class="mb-0">Experts</p>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-12 text-center" data-aos="fade-left">
-        <img src="{% static 'image/logo.png' %}" alt="Genuincode - Professional Software Solutions" class="img-fluid" style="max-width: 400px;">
+      <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+        <img src="{% static 'image/p1.png' %}" alt="Students learning" class="img-fluid rounded-3">
       </div>
     </div>
   </div>
 </section>
 
 <!-- Features Section -->
-<section id="features" class="py-5 bg-light">
+<section id="features" class="py-5">
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
-      <h1 class="fw-bold">Awesome Features</h1>
-      <p class="text-muted">We provide the best learning experience with industry-recognized features</p>
+      <h1 class="mb-3">Why Choose Genuincode?</h1>
+      <p class="text-secondary">We provide the best learning experience with industry-recognized features</p>
     </div>
     
     <div class="row g-4">
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm p-4 text-center">
-          <div class="feature-icon mb-3">
-            <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+        <div class="card h-100 feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
           </div>
-          <h3>Scholarship Facility</h3>
-          <p class="text-muted">Get access to scholarships and financial aid for your learning journey.</p>
+          <h4 class="mb-3">Expert Instructors</h4>
+          <p class="text-secondary">Learn from industry professionals with years of real-world experience.</p>
         </div>
       </div>
       
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm p-4 text-center">
-          <div class="feature-icon mb-3">
-            <i class="fas fa-globe fa-3x text-primary"></i>
+        <div class="card h-100 feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-laptop-code"></i>
           </div>
-          <h3>Online Course</h3>
-          <p class="text-muted">Learn from anywhere in the world with our online courses.</p>
+          <h4 class="mb-3">Hands-on Projects</h4>
+          <p class="text-secondary">Build real-world projects to gain practical experience and skills.</p>
         </div>
       </div>
       
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm p-4 text-center">
-          <div class="feature-icon mb-3">
-            <i class="fas fa-certificate fa-3x text-primary"></i>
+        <div class="card h-100 feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-certificate"></i>
           </div>
-          <h3>ISO Certified</h3>
-          <p class="text-muted">Get internationally recognized certificates upon course completion.</p>
+          <h4 class="mb-3">Certification</h4>
+          <p class="text-secondary">Get recognized certificates upon course completion.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Courses Section -->
-<section id="course" class="py-5">
+<!-- Popular Courses Section -->
+<section id="popular-courses" class="py-5 section-alt">
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
-      <h1 class="fw-bold">Our Popular Courses</h1>
-      <p class="text-muted">Choose from our wide range of industry-relevant courses</p>
+      <h1 class="mb-3">Popular Courses</h1>
+      <p class="text-secondary">Start learning from our most popular courses</p>
     </div>
     
     <div class="row g-4">
-      <!-- Course 1 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'image/ML.jpg' %}" alt="Machine Learning Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card course-card h-100">
+          <img src="{% static 'image/python.jpg' %}" alt="Python Course" class="card-img-top">
           <div class="card-body">
-            <span class="text-muted small">Updated 26/09/2023</span>
-            <h5 class="mt-2">Machine Learning For Beginners</h5>
-            <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="text-warning">
+            <span class="text-muted small">Updated Jan 2024</span>
+            <h5 class="mt-2 mb-3">Python for Beginners</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <span class="text-muted">(457k)</span>
+                <span>(2.5k)</span>
               </div>
+              <span class="price">₹2,999</span>
             </div>
-          </div>
-          <div class="card-footer bg-primary text-white text-center py-3">
-            <h4 class="mb-0">$49.99</h4>
           </div>
         </div>
       </div>
       
-      <!-- Course 2 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'image/angular.png' %}" alt="Angular Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card course-card h-100">
+          <img src="{% static 'image/webdev.png' %}" alt="Web Development" class="card-img-top">
           <div class="card-body">
-            <span class="text-muted small">Updated 26/09/2023</span>
-            <h5 class="mt-2">Angular For Beginners</h5>
-            <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="text-warning">
+            <span class="text-muted small">Updated Jan 2024</span>
+            <h5 class="mt-2 mb-3">Full Stack Web Development</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <span class="text-muted">(100k)</span>
+                <span>(3.2k)</span>
               </div>
+              <span class="price">₹4,999</span>
             </div>
-          </div>
-          <div class="card-footer bg-primary text-white text-center py-3">
-            <h4 class="mb-0">$59.99</h4>
           </div>
         </div>
       </div>
       
-      <!-- Course 3 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'image/robotic.jpg' %}" alt="Robotics Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card course-card h-100">
+          <img src="{% static 'image/ML.jpg' %}" alt="Machine Learning" class="card-img-top">
           <div class="card-body">
-            <span class="text-muted small">Updated 18/09/2023</span>
-            <h5 class="mt-2">Robotics For Beginners</h5>
-            <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="text-warning">
+            <span class="text-muted small">Updated Jan 2024</span>
+            <h5 class="mt-2 mb-3">Machine Learning Basics</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="text-muted">(256k)</span>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(1.8k)</span>
               </div>
+              <span class="price">₹5,999</span>
             </div>
-          </div>
-          <div class="card-footer bg-primary text-white text-center py-3">
-            <h4 class="mb-0">$78.00</h4>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Course 4 -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'image/fullstacke.png' %}" alt="Full Stack Course" class="card-img-top" style="height: 200px; object-fit: cover;">
-          <div class="card-body">
-            <span class="text-muted small">Updated 26/09/2023</span>
-            <h5 class="mt-2">Full Stack (MERN)</h5>
-            <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="text-muted">(457k)</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer bg-primary text-white text-center py-3">
-            <h4 class="mb-0">$99.00</h4>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Course 5 -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'image/html.jpg' %}" alt="HTML Course" class="card-img-top" style="height: 200px; object-fit: cover;">
-          <div class="card-body">
-            <span class="text-muted small">Updated 26/09/2023</span>
-            <h5 class="mt-2">HTML For Beginners</h5>
-            <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="text-muted">(1.5M)</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer bg-success text-white text-center py-3">
-            <h4 class="mb-0">FREE</h4>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Course 6 -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'image/cyber.png' %}" alt="Cyber Security Course" class="card-img-top" style="height: 200px; object-fit: cover;">
-          <div class="card-body">
-            <span class="text-muted small">Updated 18/09/2023</span>
-            <h5 class="mt-2">Cyber Security For Beginners</h5>
-            <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="text-muted">(423k)</span>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer bg-primary text-white text-center py-3">
-            <h4 class="mb-0">$78.00</h4>
           </div>
         </div>
       </div>
     </div>
     
     <div class="text-center mt-5" data-aos="fade-up">
-      <a href="{% url 'course' %}" class="btn btn-primary btn-lg">View All Courses</a>
+      <a href="{% url 'course' %}" class="btn btn-primary">View All Courses</a>
     </div>
   </div>
 </section>
 
-<!-- Registration Section -->
-<section id="registration" class="py-5 bg-primary text-white">
+<!-- Call to Action -->
+<section id="registration" class="py-5">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-        <h2 class="fw-bold">Get 100+ Online Courses for Free</h2>
-        <h1 class="my-4">Register Now</h1>
-        <div class="d-flex flex-wrap gap-4 justify-content-center">
-          <div class="text-center">
-            <div class="display-4 fw-bold" id="days">15</div>
-            <div>Days</div>
-          </div>
-          <div class="text-center">
-            <div class="display-4 fw-bold" id="hours">18</div>
-            <div>Hours</div>
-          </div>
-          <div class="text-center">
-            <div class="display-4 fw-bold" id="minutes">56</div>
-            <div>Minutes</div>
-          </div>
-          <div class="text-center">
-            <div class="display-4 fw-bold" id="seconds">35</div>
-            <div>Seconds</div>
-          </div>
-        </div>
+      <div class="col-lg-8" data-aos="fade-up">
+        <h2 class="mb-3">Ready to Start Learning?</h2>
+        <p class="mb-0">Join our community of learners and transform your career today. Get started with a free consultation.</p>
       </div>
-      
-      <div class="col-lg-6" data-aos="fade-left">
-        <div class="card shadow-lg p-4">
-          <h3 class="text-center mb-4 text-dark">Create Account</h3>
-          <form method="POST" action="{% url 'signup' %}">
-            {% csrf_token %}
-            {% if form.errors %}
-            <div class="alert alert-danger">{{ form.errors }}</div>
-            {% endif %}
-            
-            <div class="mb-3">
-              <label for="id_username" class="form-label text-dark">Username</label>
-              <input type="text" name="username" class="form-control" id="id_username" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="id_email" class="form-label text-dark">Email</label>
-              <input type="email" name="email" class="form-control" id="id_email" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="id_password1" class="form-label text-dark">Password</label>
-              <input type="password" name="password1" class="form-control" id="id_password1" required>
-            </div>
-            
-            <div class="mb-3">
-              <label for="id_password2" class="form-label text-dark">Confirm Password</label>
-              <input type="password" name="password2" class="form-control" id="id_password2" required>
-            </div>
-            
-            <button type="submit" class="btn btn-warning w-100 py-2">Sign Up Now</button>
-          </form>
-        </div>
+      <div class="col-lg-4 text-lg-end mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+        <a href="{% url 'contact' %}" class="btn btn-light">Contact Us</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Experts Section -->
-<section id="experts" class="py-5 bg-light">
+<!-- Testimonials / Experts -->
+<section id="experts" class="py-5">
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
-      <h1 class="fw-bold">Community Experts</h1>
-      <p class="text-muted">Our experts help to grow your skills</p>
+      <h1 class="mb-3">Meet Our Experts</h1>
+      <p class="text-secondary">Learn from industry professionals</p>
     </div>
     
     <div class="row g-4 justify-content-center">
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm text-center p-4">
-          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
-          <h5>Sourabh Kushwah</h5>
-          <p class="text-muted mb-3">Full Stack (MERN)</p>
+        <div class="card expert-card h-100">
+          <img src="{% static 'image/sourabh.png' %}" alt="Instructor" class="mx-auto">
+          <h4>Sourabh Kushwah</h4>
+          <p class="text-muted">Python Expert</p>
           <div class="social-links">
-            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
       
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm text-center p-4">
-          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
-          <h5>Sourabh Kushwah</h5>
-          <p class="text-muted mb-3">C/C++ & DSA</p>
+        <div class="card expert-card h-100">
+          <img src="{% static 'image/arun.jpg' %}" alt="Instructor" class="mx-auto">
+          <h4>Arun Sharma</h4>
+          <p class="text-muted">Web Development</p>
           <div class="social-links">
-            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm text-center p-4">
-          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
-          <h5>Sourabh Kushwah</h5>
-          <p class="text-muted mb-3">Python & Algorithms</p>
-          <div class="social-links">
-            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-        <div class="card h-100 shadow-sm text-center p-4">
-          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
-          <h5>Sourabh Kushwah</h5>
-          <p class="text-muted mb-3">Video Editing & Design</p>
-          <div class="social-links">
-            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -353,36 +210,4 @@
   </div>
 </section>
 
-{% endblock %}
-
-{% block extra_js %}
-<script>
-  // Countdown Timer
-  const deadline = new Date("July 6, 2026 00:00:00").getTime();
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const gap = deadline - now;
-
-    if (gap > 0) {
-      const second = 1000;
-      const minute = second * 60;
-      const hour = minute * 60;
-      const day = hour * 24;
-
-      const d = Math.floor(gap / day);
-      const h = Math.floor((gap % day) / hour);
-      const m = Math.floor((gap % hour) / minute);
-      const s = Math.floor((gap % minute) / second);
-
-      document.getElementById("days").innerText = d;
-      document.getElementById("hours").innerText = h;
-      document.getElementById("minutes").innerText = m;
-      document.getElementById("seconds").innerText = s;
-    }
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
 {% endblock %}
