@@ -1,251 +1,83 @@
-{%extends 'base.html'%} {%block content%} {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sign Up - Genuine Coding</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        /* Keep your styles here or use static CSS */
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sign Up | Genuincode{% endblock %}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Poppins", sans-serif;
-            background: #f7f6fa;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+{% block content %}
 
-        nav {
-            position: fixed;
-            width: 100%;
-            background-color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1vw 4vw;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
-            z-index: 999;
-        }
+<div class="container py-5 mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg" data-aos="fade-up">
+        <div class="card-body p-5">
+          <div class="text-center mb-4">
+            <img src="{% static 'image/logo.png' %}" alt="Genuincode Logo" class="mb-3" style="width: 100px;">
+            <h2 class="fw-bold">Create Account</h2>
+            <p class="text-muted">Join thousands of students learning with Genuincode</p>
+          </div>
 
-        nav img {
-            width: 70px;
-            cursor: pointer;
-            border-radius: 100%;
-        }
-
-        nav .navigation ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav .navigation ul li {
-            margin-left: 30px;
-        }
-
-        nav .navigation ul li a {
-            text-decoration: none;
-            color: rgb(21, 21, 100);
-            font-size: 16px;
-            font-weight: 500;
-            transition: 0.5s;
-        }
-
-        nav .navigation ul li a.active,
-        nav .navigation ul li a:hover {
-            color: rgb(255, 221, 28);
-        }
-
-        main {
-            margin-top: 100px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .login-container {
-            background: #fff;
-            border-radius: 8px;
-            padding: 40px 30px;
-            box-shadow: 0 8px 30px rgba(31, 38, 135, 0.12);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .login-container h2 {
-            font-size: 2rem;
-            color: rgb(35, 35, 85);
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .login-container p {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #64626e;
-            margin-bottom: 30px;
-        }
-
-        form input[type="text"],
-        form input[type="email"],
-        form input[type="password"] {
-            width: 100%;
-            padding: 15px 12px;
-            margin-bottom: 20px;
-            border: 1px solid rgb(84, 40, 241);
-            border-radius: 5px;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s ease;
-        }
-
-        form input:focus {
-            border-color: #5738fc;
-            box-shadow: 0 0 8px rgba(88, 56, 252, 0.5);
-        }
-
-        form button {
-            width: 100%;
-            background-color: #fdc93b;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 15px 0;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        form button:hover {
-            background-color: rgb(250, 215, 75);
-        }
-
-        .register-link {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        .register-link a {
-            color: #fdc93b;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            padding: 20px 4vw;
-            background: #101c32;
-            color: #fff;
-            text-align: center;
-            font-size: 0.9rem;
-            margin-top: auto;
-        }
-
-        footer .pro-links i {
-            margin: 0 8px;
-            padding: 10px 14px;
-            background: #5f7185;
-            color: #fff;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        footer .pro-links i:hover {
-            background-color: #fdc93b;
-            color: #2c2c2c;
-        }
-
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 30px 20px;
-            }
-            nav {
-                padding: 10px 20px;
-            }
-            nav img {
-                width: 60px;
-            }
-            nav .navigation ul li {
-                margin-left: 20px;
-            }
-            nav .navigation ul li a {
-                font-size: 14px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <img src="{% static 'image/logo.png' %}" alt="Genuine Coding Logo" />
-        <div class="navigation">
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'blog' %}">Blog</a></li>
-                <li><a href="{% url 'course' %}">Course</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a class="active" href="{% url 'signup' %}">User Sign Up</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main>
-        <div class="login-container">
-            <h2>Create New Account</h2>
-            <p>Please enter your details to create an account.</p>
-            <form method="POST">
-                {% csrf_token %}
-                
-                <div class="form-group">
-                  <label for="{{ form.username.id_for_label }}">Username</label>
-                  {{ form.username }}  <!-- Username field -->
-                </div>
-                
-                <div class="form-group">
-                  <label for="{{ form.email.id_for_label }}">Email</label>
-                  {{ form.email }}  <!-- Email field -->
-                </div>
-                
-                <div class="form-group">
-                  <label for="{{ form.password1.id_for_label }}">Password</label>
-                  {{ form.password1 }}  <!-- Password field -->
-                </div>
-                
-                <div class="form-group">
-                  <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
-                  {{ form.password2 }}  <!-- Confirm Password field -->
-                </div>
-                
-                <button type="submit">Sign Up</button>
-              </form>
-              
-            <div class="register-link">
-                Already have an account? <a href="{% url 'login' %}">Login here</a>
+          <form method="POST">
+            {% csrf_token %}
+            
+            {% if form.errors %}
+            <div class="alert alert-danger">
+              {% for field in form %}
+                {% for error in field.errors %}
+                  <p class="mb-0">{{ error }}</p>
+                {% endfor %}
+              {% endfor %}
             </div>
+            {% endif %}
+
+            <div class="mb-3">
+              <label for="id_username" class="form-label">Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" name="username" class="form-control" id="id_username" placeholder="Choose a username" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="id_email" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" name="email" class="form-control" id="id_email" placeholder="Enter your email" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="id_password1" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" name="password1" class="form-control" id="id_password1" placeholder="Create a password" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="id_password2" class="form-label">Confirm Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" name="password2" class="form-control" id="id_password2" placeholder="Confirm your password" required>
+              </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="terms" required>
+              <label class="form-check-label" for="terms">
+                I agree to the <a href="#" class="text-decoration-none">Terms & Conditions</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 mb-3">Create Account</button>
+            
+            <p class="text-center mb-0">
+              Already have an account? 
+              <a href="{% url 'login' %}" class="text-decoration-none fw-bold">Login</a>
+            </p>
+          </form>
         </div>
-    </main>
-<!-- 
-    <footer>
-        <div class="pro-links">
-            <i class="fab fa-facebook-f" title="Facebook"></i>
-            <i class="fab fa-instagram" title="Instagram"></i>
-            <i class="fab fa-linkedin-in" title="LinkedIn"></i>
-        </div>
-        <p>© 2024 Genuine Code. All rights reserved.</p>
-    </footer> -->
-</body>
-</html>
-{%endblock%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

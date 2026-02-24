@@ -1,439 +1,388 @@
-{%extends 'base.html'%} {%block content%} {% load static %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | Genuincode - Professional Software Solutions{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>genuine coding</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+{% block content %}
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-      
-      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <style>
-      .time .date span {
-        font-size: 2em; /* Bigger size */
-        font-weight: bold; /* Bold numbers */
-        color: #ffd700; /* Golden yellow */
-        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500; /* Glow effect */
-      }
-
-      .time .date span {
-        font-size: 2em;
-        font-weight: bold;
-        color: #ffffff;
-        text-shadow: 0 0 5px rgb(4, 4, 4), 0 0 10px rgb(125, 141, 141),
-          0 0 15px rgb(142, 172, 172);
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Navigation -->
-    <!-- <nav>
-        <img src="image/logo.png" alt="" />
-        <div class="navigation">
-          <ul>
-            <i class="fas fa-times"></i>
-            <li><a href="home">Home</a></li>
-            <li><a href="About">About</a></li>
-            <li><a href="Blog">Blog</a></li>
-            <li><a href="Course">Course</a></li>
-            <li><a href="Contact">Contact</a></li>
-            <li><a href="user login">User login</a></li>
-          </ul>
-          <img id="menu-btn" src="image/menu1.png" alt="" />
+<!-- Hero Section -->
+<section id="home" class="py-5 mt-5">
+  <div class="container">
+    <div class="row align-items-center min-vh-75">
+      <div class="col-lg-6 col-md-12" data-aos="fade-right">
+        <h1 class="display-4 fw-bold">Enhance Your Future With Genuine Code</h1>
+        <p class="lead my-4">Learn professional web development and software skills from industry experts. Join thousands of students transforming their careers.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="{% url 'learnmore_home' %}" class="btn btn-primary px-4 py-2">Learn More</a>
+          <a href="{% url 'course' %}" class="btn btn-warning px-4 py-2">View Courses</a>
         </div>
-      </nav> -->
-
-    <!-- Home -->
-
-    <section id="home">
-      <h2>Enhance Your Future With Genuine Code</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, porro
-        et? Ipsum corrupti assumenda nisi quaerat repellendus, similique
-        distinctio ipsam repellat nesciunt architecto autem, dolorum totam quae
-        voluptatum. Provident, rerum.
-      </p>
-
-      <div class="btn">
-        <a class="blue" href="learnmore_home">Learn More </a>
-        <a class="yellow" href="course">View Courses</a>
       </div>
-    </section>
+      <div class="col-lg-6 col-md-12 text-center" data-aos="fade-left">
+        <img src="{% static 'image/logo.png' %}" alt="Genuincode - Professional Software Solutions" class="img-fluid" style="max-width: 400px;">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FEATURES -->
-
-    <section id="features">
-      <h1>Awesome Features</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-        totam.
-      </p>
-
-      <div class="fea-base">
-        <div class="fea-box">
-          <i style="font-size: 24px" class="fa">&#xf19d;</i>
+<!-- Features Section -->
+<section id="features" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h1 class="fw-bold">Awesome Features</h1>
+      <p class="text-muted">We provide the best learning experience with industry-recognized features</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm p-4 text-center">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+          </div>
           <h3>Scholarship Facility</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur, id.
-          </p>
+          <p class="text-muted">Get access to scholarships and financial aid for your learning journey.</p>
         </div>
-
-        <div class="fea-box">
-          <i style="font-size: 24px" class="fa"
-            ><i class="fa-light fa-globe"></i
-          ></i>
+      </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm p-4 text-center">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-globe fa-3x text-primary"></i>
+          </div>
           <h3>Online Course</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur, id.
-          </p>
-        </div>
-
-        <div class="fea-box">
-          <i style="font-size: 24px" class="fa"
-            ><i class="fa-solid fa-certificate"></i
-          ></i>
-          <h3>ISO Certifide</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur, id.
-          </p>
+          <p class="text-muted">Learn from anywhere in the world with our online courses.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Course -->
-
-    <section id="course">
-      <h1>Our Popular Courses</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-        dolorem.
-      </p>
-      <div class="course-box">
-        <div class="courses">
-          <img src="{% static 'image/ML.jpg' %}" alt="" />
-          <div class="detail">
-            <span>Updated 26/09/2023</span>
-            <h6>Machine learning For beginners course</h6>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(457k)</span>
-            </div>
+      
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm p-4 text-center">
+          <div class="feature-icon mb-3">
+            <i class="fas fa-certificate fa-3x text-primary"></i>
           </div>
-          <div class="cost">$49.99</div>
-        </div>
-
-        <div class="courses">
-          <img src="{% static 'image/angular.png' %}" alt="" />
-          <div class="detail">
-            <span>Updated 26/09/2023</span>
-            <h6>Angular For beginners</h6>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(100k)</span>
-            </div>
-          </div>
-          <div class="cost">$59.99</div>
-        </div>
-
-        <div class="courses">
-          <img src="{% static 'image/robotic.jpg' %}" alt="" />
-          <div class="detail">
-            <span>Updated 18/09/2023</span>
-            <h6>robotices For beginners</h6>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(256k)</span>
-            </div>
-          </div>
-          <div class="cost">$78.00</div>
-        </div>
-
-        <div class="courses">
-          <img src="{% static 'image/fullstacke.png' %}" alt="" />
-          <div class="detail">
-            <span>Updated 26/09/2023</span>
-            <h6>full Stacke(MERN) For beginners</h6>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(457k)</span>
-            </div>
-          </div>
-          <div class="cost">$9.00</div>
-        </div>
-
-        <div class="courses">
-          <img src="{% static 'image/html.jpg' %}" alt="" />
-          <div class="detail">
-            <span>Updated 26/09/2023</span>
-            <h6>HTML For beginners</h6>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(1.5M)</span>
-            </div>
-          </div>
-          <div class="cost">FREE</div>
-        </div>
-
-        <div class="courses">
-          <img src="{% static 'image/cyber.png' %}" alt="" />
-          <div class="detail">
-            <span>Updated 18/09/2023</span>
-            <h6>Cyber Security For beginners</h6>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span>(423k)</span>
-            </div>
-          </div>
-          <div class="cost">$78.00</div>
+          <h3>ISO Certified</h3>
+          <p class="text-muted">Get internationally recognized certificates upon course completion.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Ragistration -->
-
-    <section id="ragistration">
-      <div class="reminder">
-        <p>Get 100+ Online Courses for Free</p>
-        <h1>Register To Get It</h1>
-        <div class="time">
-          <div class="date">
-            <span id="days">15</span> <br />
-            Days
+<!-- Courses Section -->
+<section id="course" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h1 class="fw-bold">Our Popular Courses</h1>
+      <p class="text-muted">Choose from our wide range of industry-relevant courses</p>
+    </div>
+    
+    <div class="row g-4">
+      <!-- Course 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'image/ML.jpg' %}" alt="Machine Learning Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="text-muted small">Updated 26/09/2023</span>
+            <h5 class="mt-2">Machine Learning For Beginners</h5>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-muted">(457k)</span>
+              </div>
+            </div>
           </div>
-
-          <div class="date">
-            <span id="hours">18</span> <br />
-            Hours
-          </div>
-
-          <div class="date">
-            <span id="minutes">56</span> <br />
-            minutes
-          </div>
-
-          <div class="date">
-            <span id="seconds">35</span> <br />
-            seconds
+          <div class="card-footer bg-primary text-white text-center py-3">
+            <h4 class="mb-0">$49.99</h4>
           </div>
         </div>
       </div>
-      <div class="form">
-        <form method="POST">
-          {% csrf_token %} {% if form.errors %}
-          <div class="alert alert-danger">{{ form.errors }}</div>
-          {% endif %}
-
-          <div class="form-group">
-            <label for="{{ form.username.id_for_label }}">Username</label>
-            {{ form.username }}
+      
+      <!-- Course 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'image/angular.png' %}" alt="Angular Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="text-muted small">Updated 26/09/2023</span>
+            <h5 class="mt-2">Angular For Beginners</h5>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-muted">(100k)</span>
+              </div>
+            </div>
           </div>
-
-          <div class="form-group">
-            <label for="{{ form.email.id_for_label }}">Email</label>
-            {{ form.email }}
-          </div>
-
-          <div class="form-group">
-            <label for="{{ form.password1.id_for_label }}">Password</label>
-            {{ form.password1 }}
-          </div>
-
-          <div class="form-group">
-            <label for="{{ form.password2.id_for_label }}"
-              >Confirm Password</label
-            >
-            {{ form.password2 }}
-          </div>
-
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Profile -->
-
-    <section id="experts">
-      <h1>Community Experts</h1>
-      <p>Our experts help to grow your skill's</p>
-
-      <div class="expert-box">
-        <div class="profile">
-          <img src="{% static 'image/sourabh.png' %}" alt="" />
-          <h6>Sourabh Kushwah</h6>
-          <p>Full Stack With (MERN)</p>
-          <div class="pro-links">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-        </div>
-
-        <div class="profile">
-         <img src="{% static 'image/sourabh.png' %}" alt="" />
-          <h6>Sourabh Kushwah</h6>
-          <p>C/C++ & DSA</p>
-          <div class="pro-links">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-        </div>
-
-        <div class="profile">
-          <img src="{% static 'image/sourabh.png' %}" alt="" />
-          <h6>Sourabh Kushwah</h6>
-          <p>Python & Algorithem</p>
-          <div class="pro-links">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-        </div>
-
-        <div class="profile">
-          <img src="{% static 'image/sourabh.png' %}" alt="" />
-          <h6>Sourabh Kushwah</h6>
-          <p>Video Editing & Graphic Designing</p>
-          <div class="pro-links">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
+          <div class="card-footer bg-primary text-white text-center py-3">
+            <h4 class="mb-0">$59.99</h4>
           </div>
         </div>
       </div>
-    </section>
+      
+      <!-- Course 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'image/robotic.jpg' %}" alt="Robotics Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="text-muted small">Updated 18/09/2023</span>
+            <h5 class="mt-2">Robotics For Beginners</h5>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-muted">(256k)</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-primary text-white text-center py-3">
+            <h4 class="mb-0">$78.00</h4>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Course 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'image/fullstacke.png' %}" alt="Full Stack Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="text-muted small">Updated 26/09/2023</span>
+            <h5 class="mt-2">Full Stack (MERN)</h5>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-muted">(457k)</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-primary text-white text-center py-3">
+            <h4 class="mb-0">$99.00</h4>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Course 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'image/html.jpg' %}" alt="HTML Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="text-muted small">Updated 26/09/2023</span>
+            <h5 class="mt-2">HTML For Beginners</h5>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-muted">(1.5M)</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-success text-white text-center py-3">
+            <h4 class="mb-0">FREE</h4>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Course 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'image/cyber.png' %}" alt="Cyber Security Course" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <span class="text-muted small">Updated 18/09/2023</span>
+            <h5 class="mt-2">Cyber Security For Beginners</h5>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="text-muted">(423k)</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-primary text-white text-center py-3">
+            <h4 class="mb-0">$78.00</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="{% url 'course' %}" class="btn btn-primary btn-lg">View All Courses</a>
+    </div>
+  </div>
+</section>
 
-    <!-- footer -->
+<!-- Registration Section -->
+<section id="registration" class="py-5 bg-primary text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+        <h2 class="fw-bold">Get 100+ Online Courses for Free</h2>
+        <h1 class="my-4">Register Now</h1>
+        <div class="d-flex flex-wrap gap-4 justify-content-center">
+          <div class="text-center">
+            <div class="display-4 fw-bold" id="days">15</div>
+            <div>Days</div>
+          </div>
+          <div class="text-center">
+            <div class="display-4 fw-bold" id="hours">18</div>
+            <div>Hours</div>
+          </div>
+          <div class="text-center">
+            <div class="display-4 fw-bold" id="minutes">56</div>
+            <div>Minutes</div>
+          </div>
+          <div class="text-center">
+            <div class="display-4 fw-bold" id="seconds">35</div>
+            <div>Seconds</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card shadow-lg p-4">
+          <h3 class="text-center mb-4 text-dark">Create Account</h3>
+          <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            {% if form.errors %}
+            <div class="alert alert-danger">{{ form.errors }}</div>
+            {% endif %}
+            
+            <div class="mb-3">
+              <label for="id_username" class="form-label text-dark">Username</label>
+              <input type="text" name="username" class="form-control" id="id_username" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="id_email" class="form-label text-dark">Email</label>
+              <input type="email" name="email" class="form-control" id="id_email" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="id_password1" class="form-label text-dark">Password</label>
+              <input type="password" name="password1" class="form-control" id="id_password1" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="id_password2" class="form-label text-dark">Confirm Password</label>
+              <input type="password" name="password2" class="form-control" id="id_password2" required>
+            </div>
+            
+            <button type="submit" class="btn btn-warning w-100 py-2">Sign Up Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#menu-btn").click(function () {
-          $("nav .navigation ul").addClass("active");
-        });
+<!-- Experts Section -->
+<section id="experts" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h1 class="fw-bold">Community Experts</h1>
+      <p class="text-muted">Our experts help to grow your skills</p>
+    </div>
+    
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5>Sourabh Kushwah</h5>
+          <p class="text-muted mb-3">Full Stack (MERN)</p>
+          <div class="social-links">
+            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5>Sourabh Kushwah</h5>
+          <p class="text-muted mb-3">C/C++ & DSA</p>
+          <div class="social-links">
+            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5>Sourabh Kushwah</h5>
+          <p class="text-muted mb-3">Python & Algorithms</p>
+          <div class="social-links">
+            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <img src="{% static 'image/sourabh.png' %}" alt="Sourabh Kushwah" class="rounded-circle mx-auto mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5>Sourabh Kushwah</h5>
+          <p class="text-muted mb-3">Video Editing & Design</p>
+          <div class="social-links">
+            <a href="#" class="text-primary me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-danger me-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        $("#menu-close").click(function () {
-          $("nav .navigation ul").removeClass("active");
-        });
-      });
-      const deadline = new Date("July 6, 2026 00:00:00").getTime();
+{% endblock %}
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const gap = deadline - now;
+{% block extra_js %}
+<script>
+  // Countdown Timer
+  const deadline = new Date("July 6, 2026 00:00:00").getTime();
 
-        const second = 1000;
-        const minute = second * 60;
-        const hour = minute * 60;
-        const day = hour * 24;
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const gap = deadline - now;
 
-        const d = Math.floor(gap / day);
-        const h = Math.floor((gap % day) / hour);
-        const m = Math.floor((gap % hour) / minute);
-        const s = Math.floor((gap % minute) / second);
+    if (gap > 0) {
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
 
-        document.getElementById("days").innerText = d;
-        document.getElementById("hours").innerText = h;
-        document.getElementById("minutes").innerText = m;
-        document.getElementById("seconds").innerText = s;
-      }
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-      // Function to handle the form submission using AJAX
-      function submitForm(event) {
-        event.preventDefault(); // Prevent default form submission behavior
+      document.getElementById("days").innerText = d;
+      document.getElementById("hours").innerText = h;
+      document.getElementById("minutes").innerText = m;
+      document.getElementById("seconds").innerText = s;
+    }
+  }
 
-        const form = document.querySelector("form");
-        const formData = new FormData(form);
-
-        fetch("{% url 'signup' %}", {
-          method: "POST",
-          headers: {
-            "X-CSRFToken": "{{ csrf_token }}",
-          },
-          body: formData,
-        });
-
-        then((response) => response.json()) // Handle the JSON response
-          .then((data) => {
-            if (data.message === "success") {
-              alert("Subscribe Successfully!"); // Show success message in a popup
-              form.reset(); // Clear the form after success
-            } else {
-              alert("Something went wrong. Please try again."); // Show error message
-            }
-          })
-          .catch((error) => {
-            alert("An error occurred: " + error); // Handle errors during the request
-          });
-      }
-
-      $(document).ready(function () {
-        $("form").submit(function (e) {
-          e.preventDefault(); // Prevent default form submission
-
-          $.ajax({
-            type: "POST",
-            url: "{% url 'signup' %}",
-            data: $(this).serialize(),
-            success: function (response) {
-              if (response.status == "success") {
-                alert(response.message); // You can display the success message here
-                // Optionally redirect to success page
-                window.location.href = "/success/";
-              } else {
-                alert("Error: " + response.message);
-              }
-            },
-            error: function (xhr, status, error) {
-              console.log("AJAX Error: " + status + ": " + error);
-            },
-          });
-        });
-      });
-    </script>
-  </body>
-</html>
-{%endblock%}
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+{% endblock %}
