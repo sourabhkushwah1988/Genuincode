@@ -1967,6 +1967,70 @@ footer .copyright .pro-links i:hover {
   padding-right: 30px;
 }
 
+/* Registration Form Responsive Styles */
+#ragistration .form .form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#ragistration .form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+#ragistration .form .form-group input,
+#ragistration .form input[type="text"],
+#ragistration .form input[type="email"],
+#ragistration .form input[type="password"] {
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  border: 1px solid rgb(84, 40, 241);
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#ragistration .form .form-group input:focus,
+#ragistration .form input:focus {
+  border-color: rgb(21, 21, 100);
+  box-shadow: 0 0 5px rgba(84, 40, 241, 0.3);
+}
+
+#ragistration .form button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(21, 21, 100);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+#ragistration .form button[type="submit"]:hover {
+  background-color: rgb(69, 69, 167);
+}
+
+/* Alert Styles */
+.alert {
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
 @media (max-width: 475px) {
   #ragistration {
     display: flex;
@@ -1974,6 +2038,15 @@ footer .copyright .pro-links i:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 6vw 4vw;
+  }
+
+  #ragistration .reminder {
+    margin-bottom: 30px;
+  }
+
+  #ragistration .reminder h1 {
+    font-size: 1.5rem;
   }
 
   #ragistration .reminder .time {
@@ -1983,5 +2056,15 @@ footer .copyright .pro-links i:hover {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  #ragistration .reminder .time .date {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  #ragistration .form {
+    width: 100%;
+    padding: 20px;
   }
 }

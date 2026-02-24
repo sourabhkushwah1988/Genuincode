@@ -235,7 +235,7 @@
     <section id="ragistration">
       <div class="reminder">
         <p>Get 100+ Online Courses for Free</p>
-        <h1>Ragister To Get It</h1>
+        <h1>Register To Get It</h1>
         <div class="time">
           <div class="date">
             <span id="days">15</span> <br />
@@ -258,35 +258,37 @@
           </div>
         </div>
       </div>
-      <form method="POST">
-        {% csrf_token %} {% if form.errors %}
-        <div class="alert alert-danger">{{ form.errors }}</div>
-        {% endif %}
+      <div class="form">
+        <form method="POST">
+          {% csrf_token %} {% if form.errors %}
+          <div class="alert alert-danger">{{ form.errors }}</div>
+          {% endif %}
 
-        <div class="form-group">
-          <label for="{{ form.username.id_for_label }}">Username</label>
-          {{ form.username }}
-        </div>
+          <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+          </div>
 
-        <div class="form-group">
-          <label for="{{ form.email.id_for_label }}">Email</label>
-          {{ form.email }}
-        </div>
+          <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+          </div>
 
-        <div class="form-group">
-          <label for="{{ form.password1.id_for_label }}">Password</label>
-          {{ form.password1 }}
-        </div>
+          <div class="form-group">
+            <label for="{{ form.password1.id_for_label }}">Password</label>
+            {{ form.password1 }}
+          </div>
 
-        <div class="form-group">
-          <label for="{{ form.password2.id_for_label }}"
-            >Confirm Password</label
-          >
-          {{ form.password2 }}
-        </div>
+          <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}"
+              >Confirm Password</label
+            >
+            {{ form.password2 }}
+          </div>
 
-        <button type="submit">Sign Up</button>
-      </form>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </section>
 
     <!-- Profile -->
@@ -355,7 +357,7 @@
           $("nav .navigation ul").removeClass("active");
         });
       });
-      const deadline = new Date("May 23, 2026 00:00:00").getTime();
+      const deadline = new Date("July 6, 2026 00:00:00").getTime();
 
       function updateCountdown() {
         const now = new Date().getTime();
