@@ -8,12 +8,22 @@ from .forms import ContactForm  # Import your ContactForm
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileUpdateForm
 from django.contrib.auth import logout
-from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 
-# Static page — no form
+# Home page with signup form
 def index(request):
-    return render(request,'index.html')
+    if request.method == "POST":
+        form = CustomUserForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.password = make_password(form.cleaned_data["password1"])
+            user.save()
+            return redirect('login')
+        else:
+            return render(request, 'index.html', {'form': form})
+    else:
+        form = CustomUserForm()
+    return render(request, 'index.html', {'form': form})
 
 # Static page — no form
 def about(request):
