@@ -20,6 +20,7 @@ urlpatterns = [
     path('success/', views.success, name='success'), 
     path('my_course/', views.my_course, name='my_course'), 
     path('update-profile/', views.update_profile, name='update_profile'),
+    path('logout/', logout_view, name='logout'),
     path('logout/', views.logout_view, name='logout'),
     # path('login/', views.login_view, name='login')
     

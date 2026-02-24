@@ -8,6 +8,7 @@ from .forms import ContactForm  # Import your ContactForm
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileUpdateForm
 from django.contrib.auth import logout
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 
 # Static page — no form
