@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- footer -->
+
+    <footer>
+      <div class="footer-col">
+        <h3>Top Products</h3>
+        <li>Power Tools</li>
+        <li>Manage Reputation</li>
+        <li>Manage Website</li>
+        <li>Marketing service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <li>Jobs</li>
+        <li>Brand Assets</li>
+        <li>Investor Relations</li>
+        <li>Power Tools</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Features</h3>
+        <li>Manage Reputation</li>
+        <li>Power Tools</li>
+        <li>Manage Website</li>
+        <li>Marketing service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <li>Guides</li>
+        <li>Research</li>
+        <li>Experts</li>
+        <li>Marketing Service</li>
+      </div>
+
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="subscribe">
+            <label for="{{ form.email.id_for_label }}"
+              >Your Email Address</label
+            >
+            {{ form.email }}
+            <!-- Django form email field -->
+            <button type="submit" class="yellow">SUBSCRIBE</button>
+            <!-- Submit button -->
+          </div>
+        </form>
+      </div>
+
+      <div class="copyright">
+        <p>
+          copyright &copy;02021 All rights reserved | This template is made by
+          Genuine Code
+        </p>
+        <div class="pro-links">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
